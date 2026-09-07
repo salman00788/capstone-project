@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings | Capstone Project</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <h1>Settings</h1>
+      <p class="lede">Update your profile and notification preferences.</p>
+
+      <form id="settings-form" class="card" novalidate>
+        <div class="field">
+          <label for="display-name">Display name</label>
+          <input
+            id="display-name"
+            name="displayName"
+            type="text"
+            autocomplete="name"
+            maxlength="50"
+            aria-describedby="display-name-error display-name-hint"
+          />
+          <span id="display-name-hint" class="hint">2–50 characters. Letters, spaces, apostrophes, and hyphens.</span>
+          <span id="display-name-error" class="error" role="alert"></span>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            aria-describedby="email-error"
+          />
+          <span id="email-error" class="error" role="alert"></span>
+        </div>
+
+        <div class="field">
+          <label for="bio">Bio</label>
+          <textarea
+            id="bio"
+            name="bio"
+            maxlength="160"
+            aria-describedby="bio-count bio-error"
+            placeholder="A short introduction (optional)"
+          ></textarea>
+          <span id="bio-count" class="char-count">0/160</span>
+          <span id="bio-error" class="error" role="alert"></span>
+        </div>
+
+        <div class="field">
+          <label for="theme">Theme</label>
+          <select id="theme" name="theme" aria-describedby="theme-error">
+            <option value="system">System default</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+          <span id="theme-error" class="error" role="alert"></span>
+        </div>
+
+        <fieldset class="checkbox-group">
+          <legend>Notifications</legend>
+          <div class="checkbox-row">
+            <input id="email-notifications" name="emailNotifications" type="checkbox" />
+            <label for="email-notifications">Email me about account activity</label>
+          </div>
+          <div class="checkbox-row">
+            <input id="weekly-digest" name="weeklyDigest" type="checkbox" />
+            <label for="weekly-digest">Send a weekly summary</label>
+          </div>
+        </fieldset>
+
+        <div class="actions">
+          <button type="submit" class="primary">Save settings</button>
+          <button type="reset" class="secondary">Reset</button>
+        </div>
+
+        <p id="form-status" class="status" role="status" hidden></p>
+      </form>
+    </main>
+
+    <script src="/js/validation.js"></script>
+    <script src="/js/settings.js"></script>
+  </body>
+</html>
