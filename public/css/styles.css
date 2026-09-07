@@ -1,0 +1,172 @@
+:root {
+  --bg: #f4f6f8;
+  --card: #ffffff;
+  --text: #1f2933;
+  --muted: #52606d;
+  --border: #d9e2ec;
+  --accent: #245bdb;
+  --accent-hover: #1a47b0;
+  --error: #c53030;
+  --error-bg: #fff5f5;
+  --success: #276749;
+  --success-bg: #f0fff4;
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #eef2ff 0%, var(--bg) 180px);
+  color: var(--text);
+}
+
+.page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 48px 20px 64px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 2rem;
+}
+
+.lede {
+  margin: 0 0 28px;
+  color: var(--muted);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.hint,
+.char-count,
+.error {
+  display: block;
+  font-size: 0.875rem;
+  margin-top: 6px;
+}
+
+.hint,
+.char-count {
+  color: var(--muted);
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font: inherit;
+  background: #fff;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #93c5fd;
+  border-color: var(--accent);
+}
+
+textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+
+.field-error input,
+.field-error select,
+.field-error textarea,
+[aria-invalid="true"] {
+  border-color: var(--error);
+  background: var(--error-bg);
+}
+
+.error {
+  color: var(--error);
+  min-height: 1.2em;
+}
+
+.checkbox-group {
+  display: grid;
+  gap: 10px;
+  margin: 8px 0 24px;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.checkbox-row label {
+  margin: 0;
+  font-weight: 500;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+button {
+  font: inherit;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.primary {
+  background: var(--accent);
+  color: #fff;
+  border: 0;
+}
+
+.primary:hover {
+  background: var(--accent-hover);
+}
+
+.secondary {
+  background: #fff;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.status {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-radius: 8px;
+}
+
+.status-error {
+  background: var(--error-bg);
+  color: var(--error);
+}
+
+.status-success {
+  background: var(--success-bg);
+  color: var(--success);
+}
