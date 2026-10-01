@@ -28,3 +28,8 @@ This is my internship capstone project.
 - docs: for documentation changes
 - chore: for maintenance and setup changes
 - refactor: for code restructuring
+## Project Rules
+
+- Keep frontend changes simple and use the existing HTML, CSS, and JavaScript structure.
+- Validate user input before processing or submitting settings.
+- Avoid adding new dependencies unless they are necessary for the feature.
