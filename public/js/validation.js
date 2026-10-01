@@ -1,8 +1,8 @@
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const NAME_PATTERN = /^[A-Za-z][A-Za-z '\-]{1,49}$/;
 
-function validateDisplayName(value) {
-  const name = value.trim();
+function validateDisplayName(value = "") {
+  const name = String(value).trim();
 
   if (!name) {
     return "Display name is required.";
@@ -23,8 +23,8 @@ function validateDisplayName(value) {
   return "";
 }
 
-function validateEmail(value) {
-  const email = value.trim();
+function validateEmail(value = "") {
+  const email = String(value).trim().toLowerCase();
 
   if (!email) {
     return "Email is required.";
@@ -37,15 +37,17 @@ function validateEmail(value) {
   return "";
 }
 
-function validateBio(value) {
-  if (value.length > 160) {
+function validateBio(value = "") {
+  const bio = String(value);
+
+  if (bio.length > 160) {
     return "Bio must be 160 characters or fewer.";
   }
 
   return "";
 }
 
-function validateTheme(value) {
+function validateTheme(value = "") {
   const allowed = ["light", "dark", "system"];
 
   if (!allowed.includes(value)) {
@@ -55,7 +57,7 @@ function validateTheme(value) {
   return "";
 }
 
-function validateSettings(values) {
+function validateSettings(values = {}) {
   return {
     displayName: validateDisplayName(values.displayName),
     email: validateEmail(values.email),
